@@ -1,0 +1,144 @@
+/* Custom StageX styles */
+body {
+    background-color: #080c14;
+    color: #f3f6fb;
+}
+.navbar, .offcanvas {
+    background-color: #0c1220;
+}
+.navbar .nav-link, .navbar .navbar-brand {
+    color: #eaf2ff !important;
+}
+.navbar .nav-link:hover {
+    color: #ffffff !important;
+}
+.card {
+    background-color: #101828;
+    border: 1px solid #27324a;
+    color: #f3f6fb;
+}
+
+/* Ensure card titles and text inherit light colour */
+.card .card-title,
+.card .card-text,
+.card .small,
+.card small {
+    color: #f3f6fb !important;
+}
+
+.card-body {
+    color: #f3f6fb;
+}
+
+/* Friendly cinematic styling for profile cards */
+.card.bg-secondary {
+    background-color: #162447 !important;
+    border-color: #27324a !important;
+}
+/* Inputs on dark backgrounds */
+.card.bg-secondary .form-control {
+    background-color: #0e1a33;
+    border-color: #27324a;
+    color: #f3f6fb;
+}
+.card.bg-secondary .form-control:focus {
+    background-color: #11224d;
+    color: #fff;
+    border-color: #495c83;
+    box-shadow: none;
+}
+.card.bg-secondary .form-label {
+    color: #eaf2ff;
+}
+.card.bg-secondary .btn-warning {
+    background-color: #ffc107;
+    color: #212529;
+    border: none;
+}
+.card.bg-secondary .btn-warning:hover {
+    background-color: #e0a800;
+}
+.seat {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.8rem;
+    border: 1px solid #3b415a;
+    color: #fff;
+    margin: 2px;
+}
+.seat.A {
+    background-color: #0d6efd;
+}
+.seat.B {
+    background-color: #198754;
+}
+.seat.C {
+    background-color: #6f42c1;
+}
+.seat.selected {
+    box-shadow: 0 0 0 3px #20c997 inset, 0 0 0 1px #20c997;
+}
+.seat.booked {
+    background-color: #adb5bd;
+    color: #212529;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+.seat.disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Ensure that table cells wrap long words and do not overflow the viewport.
+   Without this rule, very long review content without spaces can break
+   the layout by forcing the table to stretch horizontally.  Using
+   `word-break: break-word` will insert line breaks within long words. */
+.table td {
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* Lighten muted text on dark backgrounds.  Bootstrap's default
+   `.text-muted` colour can be too dark on our dark admin theme.  Use
+   a lighter grey to improve readability. */
+.text-muted {
+    color: #8894a8 !important;
+}
+
+/* Lighten secondary text on dark themes.  The default Bootstrap
+   secondary colour (#6c757d) is too low contrast on a black or
+   very dark background.  Use a brighter shade to improve legibility */
+.text-secondary {
+    color: #a5b8d0 !important;
+}
+
+/* Ensure the top navigation bar remains clickable when stacked above
+   other page content.  A high z-index prevents forms or modals from
+   intercepting clicks on login/register buttons. */
+.navbar {
+    /* Position the navbar above other content so its buttons remain clickable.
+       The high z-index prevents form fields or other elements from blocking
+       clicks on login/register buttons.  A relative positioning context is
+       required to apply the z-index. */
+    position: relative;
+    z-index: 1020;
+}
+
+/* Colour mappings for randomly assigned seat categories.  These
+   classes correspond to Bootstrap colour names.  Using CSS custom
+   properties allows the colours to inherit the values from the
+   currently loaded Bootstrap theme. */
+/* Custom seat colour classes derived from the seat_categories table.  Each
+   class name is prefixed with 'c' followed by the hex code (without the
+   leading '#') to form a valid CSS identifier.  These colours replace
+   Bootstrap's built‑in contextual classes so that seat colours remain
+   consistent even when Bootstrap is upgraded or removed. */
+.seat.c0d6efd { background-color: #0d6efd; }
+.seat.c198754 { background-color: #198754; }
+.seat.c6f42c1 { background-color: #6f42c1; }
